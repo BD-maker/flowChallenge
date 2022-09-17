@@ -11,16 +11,16 @@ import kotlinx.coroutines.launch
 import com.example.flowchallengue.utils.Result
 
 class CharactersListViewModel(
-    val getCharactersUseCase: GetCharactersUseCase
+    private val getCharactersUseCase: GetCharactersUseCase
 ) : ViewModel() {
 
     private val _viewState = MutableLiveData<ViewState<Any>>()
     val viewState: LiveData<ViewState<Any>> = _viewState
 
-    fun getAllCharacters() {
+    fun getAllCharacters(page: String) {
         viewModelScope.launch {
             _viewState.postValue(ViewState.Loading)
-            when (val response = getCharactersUseCase.getCharacters()) {
+            when (val response = getCharactersUseCase.getCharacters(page)) {
                 is Result.Success -> _viewState.postValue(ViewState.Success(response.data))
                 is Result.Error -> _viewState.postValue(ViewState.Error(response.exception))
             }

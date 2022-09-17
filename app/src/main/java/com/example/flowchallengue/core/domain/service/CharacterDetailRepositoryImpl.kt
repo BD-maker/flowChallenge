@@ -15,12 +15,10 @@ class CharacterDetailRepositoryImpl(
     override suspend fun getCharacterDetail(id: String): Result<CharacterModel> {
         return withContext(Dispatchers.IO) {
             try {
-                val response = service.getCharacterDetail("dd")
+                val response = service.getCharacterDetail(id)
                 response.body()?.let {
                     Result.Success(it)
                 } ?: Result.Error(NoSuchElementException())
-            } catch (e: HttpException) {
-                Result.Error(e)
             } catch (e: UnknownHostException) {
                 Result.Error(e)
             } catch (e: Exception) {

@@ -10,7 +10,8 @@ import com.example.flowchallengue.databinding.CharacterItemBinding
 import com.squareup.picasso.Picasso
 
 class CharacterAdapter(
-    private val characters: List<CharacterModel>
+    private val characters: List<CharacterModel>,
+    private val onItemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<CharacterAdapter.CharacterHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterHolder {
@@ -27,10 +28,17 @@ class CharacterAdapter(
         holder.render(characters[position])
     }
 
-    override fun getItemCount(): Int = characters.size
+    override fun getItemCount(): Int {
+        return if (characters.isNotEmpty()) {
+            characters.size
+        } else {
+            0
+        }
+    }
 
 
-    class CharacterHolder( val view: View) : RecyclerView.ViewHolder(view) {
+    inner class CharacterHolder( val view: View) : RecyclerView.ViewHolder(view),
+        View.OnClickListener  {
 
         fun render(character: CharacterModel){
             val binding = CharacterItemBinding.bind(view)
@@ -38,6 +46,16 @@ class CharacterAdapter(
             Picasso.get().load(character.image).into(binding.ivItemImage)
         }
 
+        override fun onClick(v: View?) {
+            val position = absoluteAdapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onItemClickListener.onItemClick(characters[position].id.toString() ?: "")
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(id: String)
     }
 }
 

@@ -8,7 +8,7 @@ class GetCharactersUseCaseImpl(
     private val listRepository : CharactersListRepository
 ) : GetCharactersUseCase {
 
-    override suspend fun getCharacters(): Result<CharactersListData> {
-        return listRepository.getCharacters()
+    override suspend fun getCharacters(page: String): Result<CharactersListData> {
+        return listRepository.getCharacters(page)
     }
 }

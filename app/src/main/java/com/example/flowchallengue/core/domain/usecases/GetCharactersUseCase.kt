@@ -5,7 +5,7 @@ import com.example.flowchallengue.core.domain.service.CharactersListRepository
 import com.example.flowchallengue.utils.Result
 
 interface GetCharactersUseCase {
-    suspend fun getCharacters() : Result<CharactersListData>
+    suspend fun getCharacters(page : String) : Result<CharactersListData>
 
     companion object Factory{
         fun create() : GetCharactersUseCase{

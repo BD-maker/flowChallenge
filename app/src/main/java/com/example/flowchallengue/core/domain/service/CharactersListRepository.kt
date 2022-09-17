@@ -7,11 +7,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import com.example.flowchallengue.utils.Result
 
 interface CharactersListRepository {
-    suspend fun getCharacters() : Result<CharactersListData>
+    suspend fun getCharacters(page: String): Result<CharactersListData>
 
-    companion object Factory{
-        fun create() : CharactersListRepository{
-            val service  = Retrofit.Builder()
+    companion object Factory {
+        fun create(): CharactersListRepository {
+            val service = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

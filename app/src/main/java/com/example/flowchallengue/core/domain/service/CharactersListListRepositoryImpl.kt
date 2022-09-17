@@ -12,10 +12,10 @@ class CharactersListListRepositoryImpl(
     private val service: RickAndMortyAPI
 ) : CharactersListRepository {
 
-    override suspend fun getCharacters(): Result<CharactersListData> {
+    override suspend fun getCharacters(page : String): Result<CharactersListData> {
         return withContext(Dispatchers.IO) {
             try {
-                val response = service.getCharacters()
+                val response = service.getCharacters(page)
                 response.body()?.let {
                     Result.Success(it)
                 } ?: Result.Error(Exception())
