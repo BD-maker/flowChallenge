@@ -16,7 +16,7 @@ interface CharactersListRepository {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RickAndMortyAPI::class.java)
-            return CharactersListListRepositoryImpl(service)
+            return CharactersListRepositoryImpl(service)
         }
     }
 }
