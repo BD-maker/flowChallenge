@@ -54,13 +54,14 @@ class CharactersListFragment : Fragment(), CharacterAdapter.OnItemClickListener 
         getCharacters()
     }
 
-    private fun getCharacters( page : String = "1"){
+    private fun getCharacters(page: String = "1") {
         viewModel.getAllCharacters(page)
     }
 
-    private fun initRecyclerView(){
+    private fun initRecyclerView() {
         binding.rvCharacters.layoutManager = GridLayoutManager(activity, 3)
     }
+
     private fun showLoading() {
         binding.apply {
             loadingLottie.visibility = View.VISIBLE
@@ -84,10 +85,10 @@ class CharactersListFragment : Fragment(), CharacterAdapter.OnItemClickListener 
                     getCharacters(address.filter { it.isDigit() })
                 }
             } ?: run { backArrow.visibility = View.INVISIBLE }
-            model.info.next?.let{   address->
+            model.info.next?.let { address ->
                 nextArrow.visibility = View.VISIBLE
                 nextArrow.setOnClickListener {
-                    getCharacters(address.filter{it.isDigit()})
+                    getCharacters(address.filter { it.isDigit() })
                 }
             } ?: run { nextArrow.visibility = View.INVISIBLE }
         }
@@ -95,14 +96,14 @@ class CharactersListFragment : Fragment(), CharacterAdapter.OnItemClickListener 
 
     override fun onItemClick(id: String) {
         if (id.isNotEmpty() &&
-            findNavController().currentDestination?.id == R.id.CharactersListFragment
+            findNavController().currentDestination?.id == R.id.charactersListFragment
         ) {
-            CharactersListFragmentDirections.actionListToDetail(id)
+            findNavController().navigate(CharactersListFragmentDirections.actionListToDetail(id))
         }
     }
 
-    private fun showErrorScreen(error : Throwable) {
-        when(error){
+    private fun showErrorScreen(error: Throwable) {
+        when (error) {
             is UnknownHostException -> Toast.makeText(
                 context,
                 "No hay conexión a internet", LENGTH_SHORT

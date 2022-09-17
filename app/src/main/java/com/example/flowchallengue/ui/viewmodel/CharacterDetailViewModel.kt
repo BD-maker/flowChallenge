@@ -10,7 +10,7 @@ import com.example.flowchallengue.utils.Result
 import kotlinx.coroutines.launch
 
 class CharacterDetailViewModel(
-    val getCharacterDetailUseCase: GetCharacterDetailUseCase
+    private val getCharacterDetailUseCase: GetCharacterDetailUseCase
 ) : ViewModel() {
 
     private val _viewState = MutableLiveData<ViewState<Any>>()

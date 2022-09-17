@@ -5,7 +5,7 @@ import com.example.flowchallengue.core.domain.service.CharacterDetailRepository
 import com.example.flowchallengue.utils.Result
 
 class GetCharacterDetailUseCaseImpl(
-    val repository: CharacterDetailRepository
+    private val repository: CharacterDetailRepository
 ) : GetCharacterDetailUseCase {
 
     override suspend fun getCharacter(id: String): Result<CharacterModel> {

@@ -20,7 +20,8 @@ class CharacterAdapter(
             layoutInflater.inflate(
                 R.layout.character_item,
                 parent,
-                false)
+                false
+            )
         )
     }
 
@@ -37,10 +38,14 @@ class CharacterAdapter(
     }
 
 
-    inner class CharacterHolder( val view: View) : RecyclerView.ViewHolder(view),
-        View.OnClickListener  {
+    inner class CharacterHolder(private val view: View) : RecyclerView.ViewHolder(view),
+        View.OnClickListener {
 
-        fun render(character: CharacterModel){
+        init {
+            view.setOnClickListener(this)
+        }
+
+        fun render(character: CharacterModel) {
             val binding = CharacterItemBinding.bind(view)
             binding.tvItemName.text = character.name
             Picasso.get().load(character.image).into(binding.ivItemImage)
