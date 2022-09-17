@@ -1,13 +1,14 @@
 package com.example.flowchallengue.core.domain.usecases
 
 import com.example.flowchallengue.core.domain.model.CharactersListData
-import com.example.flowchallengue.core.domain.service.CharactersRepository
+import com.example.flowchallengue.core.domain.service.CharactersListRepository
+import com.example.flowchallengue.utils.Result
 
 class GetCharactersUseCaseImpl(
-    val repository : CharactersRepository
+    private val listRepository : CharactersListRepository
 ) : GetCharactersUseCase {
 
-    override fun getCharacters(): CharactersListData {
-        TODO("Not yet implemented")
+    override suspend fun getCharacters(): Result<CharactersListData> {
+        return listRepository.getCharacters()
     }
 }
