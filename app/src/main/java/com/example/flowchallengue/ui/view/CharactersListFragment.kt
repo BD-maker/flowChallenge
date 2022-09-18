@@ -115,4 +115,3 @@ class CharactersListFragment : Fragment(), CharacterAdapter.OnItemClickListener 
         }
     }
 }
-

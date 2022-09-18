@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/detailEnd"
+        motion:constraintSetStart="@id/detailStart"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/detailStart">
+        <Constraint
+            android:id="@+id/ivCharacter"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp"
+            android:alpha="0"
+            android:visibility="visible" />
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivCharacter"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tvCharacterName"
+            motion:layout_editor_absoluteX="58dp"
+            android:alpha="0"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterName"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterName"
+            android:alpha="0"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterSpecie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterStatus"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterStatus"
+            android:alpha="0"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterSpecie"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterSpecie"
+            android:alpha="0"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/back_arrow_container"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="0dp"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/detailEnd">
+        <Constraint
+            android:id="@+id/ivCharacter"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivCharacter"
+            motion:layout_constraintStart_toStartOf="@id/ivCharacter"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterName"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterName"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterSpecie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterStatus"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterStatus"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvCharacterOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvCharacterSpecie"
+            motion:layout_constraintStart_toStartOf="@id/tvCharacterSpecie"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/back_arrow_container"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="1" />
+    </ConstraintSet>
+</MotionScene>

@@ -79,7 +79,7 @@ class CharacterDetailFragment : Fragment() {
                     )
                 }
             }
-            backArrowContainer.visibility = View.VISIBLE
+            motionDetail.transitionToState(R.id.detailEnd)
         }
     }
 
@@ -95,6 +95,4 @@ class CharacterDetailFragment : Fragment() {
             ).show()
         }
     }
-
-
 }
