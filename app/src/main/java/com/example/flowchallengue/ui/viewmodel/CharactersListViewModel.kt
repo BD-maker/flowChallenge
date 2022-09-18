@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.flowchallengue.core.domain.model.CharactersListData
 import com.example.flowchallengue.core.domain.model.ViewState
 import com.example.flowchallengue.core.domain.usecases.GetCharactersUseCase
 import kotlinx.coroutines.launch

@@ -16,7 +16,6 @@ import com.example.flowchallengue.core.domain.model.CharacterModel
 import com.example.flowchallengue.core.domain.model.ViewState
 import com.example.flowchallengue.core.domain.usecases.GetCharacterDetailUseCase
 import com.example.flowchallengue.databinding.FragmentCharacterBinding
-import com.example.flowchallengue.databinding.FragmentCharactersListBinding
 import com.example.flowchallengue.ui.viewmodel.CharacterDetailViewModel
 import com.squareup.picasso.Picasso
 import java.lang.Exception

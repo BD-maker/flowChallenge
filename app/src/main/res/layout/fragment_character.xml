@@ -20,11 +20,12 @@
         android:id="@+id/tvCharacterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxWidth="250dp"
         android:paddingTop="40dp"
         android:textColor="@color/green"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@id/ivCharacter"
         app:layout_constraintTop_toBottomOf="@id/ivCharacter"
         tools:text="Name" />
 
@@ -32,11 +33,12 @@
         android:id="@+id/tvCharacterStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxWidth="250dp"
         android:paddingTop="15dp"
         android:textColor="@color/green"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@id/tvCharacterName"
         app:layout_constraintTop_toBottomOf="@id/tvCharacterName"
         tools:text="Status" />
 
@@ -44,11 +46,12 @@
         android:id="@+id/tvCharacterSpecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxWidth="250dp"
         android:paddingTop="15dp"
         android:textColor="@color/green"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@id/tvCharacterStatus"
         app:layout_constraintTop_toBottomOf="@id/tvCharacterStatus"
         tools:text="Specie" />
 
@@ -56,13 +59,13 @@
         android:id="@+id/tvCharacterOrigin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxWidth="250dp"
         android:paddingTop="15dp"
         android:textColor="@color/green"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/tvCharacterSpecie"
         app:layout_constraintTop_toBottomOf="@id/tvCharacterSpecie"
-        tools:text="Origin" />
+        tools:text="Origin: Earth ( Replacede dimension in episode)" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loading_lottie"
@@ -112,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:textColor="@color/green"
+            android:textColor="@color/lima"
             android:textSize="22sp"
             android:visibility="visible" />
 
