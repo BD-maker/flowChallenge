@@ -6,6 +6,7 @@ El ejercicio consisite en visualizar una lista de personajes de la serie Rick An
 Para este proyecto se utilizó:
 - Clean Arquitecture
 - Navigation Component
+- ViewBinding
 - UseCases
 - Corutinas
 - Arquitectura MVVM
