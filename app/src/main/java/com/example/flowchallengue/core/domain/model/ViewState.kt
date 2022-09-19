@@ -1,6 +1,5 @@
 package com.example.flowchallengue.core.domain.model
 
-import java.lang.Exception
 
 sealed class ViewState<out T: Any>{
     object Loading : ViewState<Nothing>()
