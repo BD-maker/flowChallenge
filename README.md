@@ -31,7 +31,7 @@ En el proyecto se implementó Clean Arquitecture, esto permite desacoplar difere
 
 La idea es definir el proyecto en varias capas y que las exteriores sepan lo que hay en las interiores, pero en en las capas interiores no sepan lo que hay en las exteriores. Por este motivo las dependencias se inyectan de afuera hacia adentro.
 
-Para aplicar esta arquitectura se necesitaba inyectar las dependencias a cada capa lo cual se realizó de forma manual a través del patrón Factory.
+Para aplicar esta arquitectura se inyectaron las dependencias a cada capa de forma manual a través del patrón Factory.
 
 
 ## Capa UI / Data Source
@@ -49,7 +49,7 @@ Navigation Component esta formado por:
 
 Para pasar la información a cada Fragment se utilizó el componente de Gradle "Safe Args", que nos provee seguridad de tipo, a diferencia del objeto Bundle.
 
-Para la Data Source, en este caso se utiliza una llamada a la API de Rick And Morty pero también podría ser una base de datos room.
+Para la Data Source, en este caso se utiliza una llamada a la API de Rick And Morty.
 
 
 ## Capa Presenter/Repository
